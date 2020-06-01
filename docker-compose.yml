@@ -11,7 +11,7 @@ services:
       - mysql:/var/lib/mysql
   web:
     build: .
-    command: bash -c "rm -f /fitness_app/tmp/pids/server.pid && bundle exec rails s -p 3200 -b '0.0.0.0'"
+    command: bash -c "rm -f /fitness_app/tmp/pids/server.pid && yarn install --check-files && bundle exec rails s -p 3200 -b '0.0.0.0'"
     volumes:
       - .:/fitness_app
     ports:
